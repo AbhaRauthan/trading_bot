@@ -1,4 +1,4 @@
-import argparse
+iimport argparse
 from bot.client import BinanceClient
 from bot.validators import validate_side, validate_order_type
 from bot.orders import format_order_response
@@ -20,9 +20,8 @@ def main():
     side = validate_side(args.side.upper())
     order_type = validate_order_type(args.type.upper())
 
-    # Initialize client (replace with your testnet API keys)
-    api_key = "YOUR_TESTNET_API_KEY"
-    api_secret = "YOUR_TESTNET_API_SECRET"
+    api_key = "eMuwWhsOdubuXQAF1asHggkXP5cIdQJSgX7CD1IaA3vzruIYmzCvBXhR8fTKlfC3"
+    api_secret = "NYFf2G98OzqTLDWWxSY5i4NQi6x04b4zzeHeDtelWP80Q2U8LfR2XkcNCEx2wMtZ"
     client = BinanceClient(api_key, api_secret)
 
     try:
@@ -34,7 +33,7 @@ def main():
             price=args.price
         )
         response = format_order_response(order)
-        print("✅ Order placed successfully!")
+        print("Order placed successfully!")
         print(response)
     except Exception as e:
         print(f"Failed to place order: {e}")
