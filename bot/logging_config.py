@@ -1,1 +1,13 @@
+import logging
+
+def setup_logger(name, log_file="logs/trading.log", level=logging.INFO):
+    handler = logging.FileHandler(log_file)
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    handler.setFormatter(formatter)
+
+    logger = logging.getLogger(name)
+    logger.setLevel(level)
+    if not logger.handlers:
+        logger.addHandler(handler)
+    return logger
 
