@@ -1,4 +1,4 @@
-iimport argparse
+import argparse
 from bot.client import BinanceClient
 from bot.validators import validate_side, validate_order_type
 from bot.orders import format_order_response
